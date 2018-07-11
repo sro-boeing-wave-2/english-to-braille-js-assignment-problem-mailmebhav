@@ -10,11 +10,9 @@ function respond() {
   document.getElementById('targetLangText').innerHTML = '';
   const mes = document.getElementById('sourceLangText').value;
   const myMap = new Map(englishToBrailleLiteralSet);
-  let i;
   let brailletxt = '';
-  for (i = 0; i < mes.length; i += 1) {
-    brailletxt += myMap.get(mes[i]);
-  }
+  const result = mes.split('').map(messtr => myMap.get(messtr));
+  brailletxt = result.join('');
   document.getElementById('targetLangText').innerHTML = brailletxt;
 }
 document.getElementById('btnConvertEnglishToBraille').onclick = respond;
