@@ -17,7 +17,4 @@ function respond() {
   }
   document.getElementById('targetLangText').innerHTML = brailletxt;
 }
-function initfunction() {
-  document.getElementById('btnConvertEnglishToBraille').onclick = respond;
-}
-window.onload = initfunction;
+document.getElementById('btnConvertEnglishToBraille').onclick = respond;
